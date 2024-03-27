@@ -1,0 +1,11 @@
+const express = require("express");
+const router = express.Router();
+const BuyerController = require("../controllers/BuyerController");
+const signupSchema = require("../validators/auth-validator");
+const validate = require("../middlewares/validate-middleware");
+router.route("/Signup").post(validate(signupSchema),BuyerController.BuyerSignup);
+router.route("/Login").post(BuyerController.BuyerLogin);
+router.route("/addtocart").post(BuyerController.AddCart);
+router.route("/delcart/:id").delete(BuyerController.DelCart);
+router.route("/getcart/:id").get(BuyerController.GetCart);
+module.exports = router;

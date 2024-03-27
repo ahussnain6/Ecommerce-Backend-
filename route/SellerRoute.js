@@ -1,0 +1,10 @@
+const express = require("express");
+const router = express.Router();
+const sellerController = require("../controllers/SellerController");
+const signupSchema = require("../validators/auth-validator");
+const validate = require("../middlewares/validate-middleware");
+router.route("/Signup").post(validate(signupSchema),sellerController.SellerSignup);
+router.route("/Login").post(sellerController.SellerLogin);
+router.route("/addproduct").post(sellerController.AddProduct);
+router.route("/getorder/:id").get(sellerController.getOrders);
+module.exports = router;
