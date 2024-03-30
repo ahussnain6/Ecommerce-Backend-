@@ -9,7 +9,7 @@ const productRouter = require("./route/ProductRoute");
 const connectdb = require("./utils/db");
 const errormiddleware = require("./middlewares/error-middleware");
 const corsOptions ={
-    origin:"http://localhost:4200",
+    origin:"*",
     method:"GET,POST,PUT,DELETE,HEAD,PATCH",
     credentials:true}
 app.use(cors(corsOptions));
