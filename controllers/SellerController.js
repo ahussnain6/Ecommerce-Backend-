@@ -2,7 +2,6 @@ const Seller = require("../models/seller-model");
 const Cart = require("../models/cart-model");
 const Product = require("../models/product-model");
 const SellerSignup =async (req,res)=>{
-    console.log(req.body);
     const {username,email,phone,password,sellerID}= req.body;
     try{
       const sellerExist = await Seller.findOne({email});
@@ -21,13 +20,11 @@ const SellerSignup =async (req,res)=>{
   }
   const SellerLogin = async (req,res)=>{
     const {email,password} = req.body;
-    console.log(req.body);
      try{
        const sellerExist = await Seller.findOne({email:email});
        if(!sellerExist){
         return res.status(400).json({message:"Invalid Credientials"});
        }else{
-      
       if(sellerExist.password == password){
         res.status(200).json({
           name:sellerExist.username,
@@ -41,7 +38,6 @@ const SellerSignup =async (req,res)=>{
      catch(error){
       next(error); }}
       const AddProduct = async(req,res)=>{
-        console.log(req.body);
         const {name,price,color,image,desc,sellerId}= req.body;
       try {
       const data = await Product.create({name,price,color,image,desc,sellerId});

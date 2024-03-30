@@ -1,20 +1,16 @@
 const Product = require("../models/product-model"); 
 const getProId =async(req,res)=>{
   const id = req.params.id;
-  console.log(id);
 try {
   const product = await Product.findOne({_id:id});
   res.json(product);
-  console.log(product)
 } catch (error) {
   console.log(error);}}
 const getList =async(req,res)=>{
   const id = req.params.id;
-  console.log(id);
 try {
   const product = await Product.find({sellerId:id});
   res.json(product);
-  console.log(product)
 } catch (error) {
   console.log(error);
 }}
@@ -37,7 +33,6 @@ const q = req.params.q;
   try {
   const item = await Product.find({name:{$regex:q,$options:"i"}});
   res.json(item);
-  console.log(item);
 } catch (error) {
   console.log(error);
 }

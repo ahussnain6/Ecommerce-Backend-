@@ -14,6 +14,9 @@ const corsOptions ={
     credentials:true}
 app.use(cors(corsOptions));
 app.use(express.json());
+app.get("/",(req,res)=>{
+    res.end("Working Successfully");
+})
 app.use("/Seller",sellerRouter);
 app.use("/Buyer",buyerRouter);
 app.use("/Product",productRouter);
