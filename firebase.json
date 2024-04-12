@@ -1,0 +1,47 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "appAssociation": "AUTO",
+    "rewrites": [
+      {
+        "source": "*",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/seller-sign",
+        "destination": "/browser/seller-sign/index.html",
+        "dynamicLinks": true
+      },
+      {
+        "source": "/user-sign",
+        "destination": "/browser/user-sign/index.html",
+        "dynamicLinks": true
+      },
+      {
+        "source": "/cart-page",
+        "destination": "/browser/cart-page/index.html",
+        "dynamicLinks": true
+      },
+      {
+        "source": "/seller-add-product",
+        "destination": "/browser/seller-add-product/index.html",
+        "dynamicLinks": true
+      },
+      {
+        "source": "/seller-home",
+        "destination": "/browser/seller-home/index.html",
+        "dynamicLinks": true
+      },
+      {
+        "source": "/seller-orders",
+        "destination": "/browser/seller-orders/index.html",
+        "dynamicLinks": true
+      }
+    ]
+  }
+}
